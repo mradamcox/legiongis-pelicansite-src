@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import date
 
 AUTHOR = u'LegionGIS'
-SITENAME = u'Legion GIS, LLC'
+SITENAME = u'Legion GIS'
 SITEURL = ''
 
 PATH = 'content'
