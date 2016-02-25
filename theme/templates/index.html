@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% block content_title %}
+{% endblock %}
+
+
+{% set cnt = 0 %}
+<div class="recent-news-header">
+    <h3>Welcome</h3>
+</div>
+{% if page %}
+{{page.content}}
+{% endif %}
+<hr>
+<div class="recent-news-header">
+    <h3>Latest News</h3>
+</div>
+
+{% for article in dates[:1] %} 
+<div class="article-summary">
+    <div class="date-line">{{ article.locale_date }}, by {{ article.author }}</div>
+    <h4>
+        <a href="{{ SITEURL }}/{{ article.url }}" rel=Bookmark title="Permalink to {{ article.title | striptags }}">{{ article.title }}</a>
+    </h4>
+    <div style="padding-left:25px">{{ article.summary }}</div>
+    
+</div>
+{% endfor %}
+
+
+
+{% endblock content %}
+<!-- END CONTENT -->

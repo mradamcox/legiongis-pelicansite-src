@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/foundation.min.css" media="all">
+    <script type="text/javascript" src="{{ SITEURL }}/theme/js/modernizr.js"></script>
+    <script type="text/javascript" src="{{ SITEURL }}/theme/js/general.js"></script>
+    
+    
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,700,300italic,400italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/lamboz.css" media="all">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/legiontheme.css" media="all">
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+    {% endif %}
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_ATOM and category %}
+    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_RSS and category %}
+    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+    {% endif %}
+    {% if TAG_FEED_ATOM and tag %}
+    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+    {% endif %}
+    {% if TAG_FEED_RSS and tag %}
+    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+    {% endif %}
+    {% endblock head %}        
+</head>
+<body>
+    <div class="content">
+        <div class="container main-container">
+            <div class="row main-row">
+                <div class="pages">
+                    <ul style="text-align:center;">
+                        {% for p in pages|sort(attribute='sortorder') %}
+                            {% if p.title == "Slervices" %}
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">{{ p.title }} <b class="caret"></b></a></a>
+                                <ul class="dropdown-menu">
+                                {% for t,l in SERVICES_PAGES %}
+                                    <li><a href="{{l}}">{{t}}</a></li>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                            {% else %}
+                            <li {% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% block pageheader %}
+            <div class="row main-row">
+                <div class="hp-header">
+                    <div class="page-header">
+                        <div class="content-header">
+                            <div id="title-block">
+                            <h1>Legion GIS</h1>
+                            <p class="blurb">{{ SITESUBTITLE }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+            <div class="row content-row" style="padding:20px 0px;">
+                    <div class="container">
+                        <div class="row">
+                           <div class="col-sm-12 col-md-10">
+                                {% block content %}
+                                {% endblock %}
+                            </div>
+                            <div class="hidden-xs hidden-sm col-md-2">
+                                <h5>Our Services</h5>
+                                <ul class="links">
+                                    {% for title,link in SERVICES_PAGES %}
+                                    <li><a href="{{ link }}">{{ title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                <h5>Technologies We Use</h5>
+                                <ul class="links">
+                                    {% for title,link in LINKS %}
+                                    <li><a href="{{ link }}">{{ title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            {% block footer %}
+            <div class="row" style="padding:15px 0px; margin-left:0px; margin-right:0px;">
+                <div class="col-sm-9">
+                {% include 'credits.html' %}
+               </div>
+                <div class="col-sm-3">
+                    <h3>Categories</h3>
+                    <ul>
+                        {% for cat,l in categories %}
+                        <li{% if cat==category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a> ({{ l | length }})</li>
+                        {% endfor %}
+                    </ul>
+                 
+                </div>
+            </row>
+            {% endblock %}
+            </div>
+            {% include 'trademark.html' %}
+        </div>
+    </div>
+        <!--</div>-->
+    
+</body>
+</html>
