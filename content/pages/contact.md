@@ -4,7 +4,7 @@ sortorder: 5
 
 _Don't hesitate to get in touch!_
 
-**E-mail**<br>&nbsp;&nbsp;&nbsp;&nbsp;<a id="email-address"></a>
+**E-mail**<br>&nbsp;&nbsp;&nbsp;&nbsp;<a id="contact-email"></a>
 
 ​**Phone**<br>&nbsp;&nbsp;&nbsp;&nbsp;(608) 606-9928
 
