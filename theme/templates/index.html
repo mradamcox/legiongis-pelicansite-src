@@ -6,12 +6,13 @@
 
 
 {% set cnt = 0 %}
-<div class="recent-news-header">
-    <h3>Welcome</h3>
-</div>
+
+<section class="article">
 {% if page %}
 {{page.content}}
 {% endif %}
+</section>
+
 <hr>
 <div class="recent-news-header">
     <h3>Latest News</h3>

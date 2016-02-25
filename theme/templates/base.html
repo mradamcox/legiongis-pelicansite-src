@@ -115,29 +115,34 @@
             </div>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer" style="text-align:center">
         <div class="container">
             {% block footer %}
-            <div class="row" style="padding:15px 0px; margin-left:0px; margin-right:0px;">
-                <div class="col-sm-9">
-                {% include 'credits.html' %}
-               </div>
-                <div class="col-sm-3">
-                    <h3>Categories</h3>
-                    <ul>
-                        {% for cat,l in categories %}
-                        <li{% if cat==category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a> ({{ l | length }})</li>
-                        {% endfor %}
-                    </ul>
-                 
+            <div class="row" style="padding:15px 0px; margin-left:0px; margin-right:0px; max-width:none;">
+                <div class="col-sm-4">
+                    <p>Site last updated on {{PUBLISH_DATE}}</p>
                 </div>
-            </row>
+                <div class="col-sm-4">
+                    <p><a id="email-address"></a> | 608-606-9928</p>
+                </div>
+                <div class="col-sm-4">
+                    {% include 'credits.html' %}
+                </div>
+            </div>
             {% endblock %}
             </div>
             {% include 'trademark.html' %}
         </div>
     </div>
-        <!--</div>-->
-    
+    <script>
+        var c1 = "info";
+        var c2 = "@";
+        var c3 = "legiongis.com";
+        var email = c1+c2+c3
+        $(document).ready(function() {
+            document.getElementById('email-address').textContent = email;
+            document.getElementById('email-address').href = "mailto:"+email;
+        });
+    </script>
 </body>
 </html>
