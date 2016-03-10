@@ -63,3 +63,6 @@ target/
 
 # Pelican output
 output/
+
+# files for download
+theme/static/files/
