@@ -1,8 +1,8 @@
 Title: Our Website Is Up & Running
 Date: 2016-02-25
-Category: Announcements
+Category: news
 Author: Legion GIS Team
-Tags: Announcements, Startup, Chit-Chat
+Tags: announcements, startup, chit-chat
 
 ###Hello!###
 
