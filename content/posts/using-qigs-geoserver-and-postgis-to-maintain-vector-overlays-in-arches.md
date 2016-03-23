@@ -1,25 +1,26 @@
 Title: Using QGIS, GeoServer, and PostGIS to Make and Maintain Arches Overlays
-Date: 2016-03-22
+Date: 2016-03-23
 Category: technical
 Author: Adam Cox
-Tags: Arches, geoserver, QGIS, PostGIS
+Tags: Arches v3, GeoServer, QGIS, PostGIS
+Description: Someone got in touch with me recently about using GeoServer to serve custom-made (and _maintainable_) vector overlays to the Arches MAP VIEW, in order to add specific study/research areas to the map. This can be achieved with a graceful integration of some solid open source technologies that Arches is primed to handle. Functionally, wouldn't it be great to edit your vector layers in Quantum GIS, and have the updates immediately visible in your Arches overlays?
 
-Someone got in touch with me recently about using GeoServer to serve custom-made (and _maintainable_) vector overlays to the Arches MAP VIEW, in order to add specific study/research areas to the map. This can be achieved with a graceful integration of some solid open source technologies that Arches is primed to handle. Functionally, it wouldn't it be great to edit your vector layers in Quantum GIS, and have the updates immediately visible in your Arches overlays?
-
-First I should point out that there is already support built into Arches for functionality similar to this, as you can read about [here](http://arches-hip.readthedocs.org/en/latest/loading-data/#optional-gis-layers-for-administrative-areas). By adding to the tables in the "aux" schema within your app's existing PostGIS database, you can set it up so that any new resource created within the area will automatically be attributed with the name of that area. If that is not a function that you're in, I think it's worthwhile to rework the system and place your tables outside of your Arches database. (Because, for one, this db is deleted on every package reinstallation, requiring you to reload your custom geometry.)
-
-I've used a couple of other methods to achieve portions of this in the past--in one case to show private property boundaries and PLSS lines--which have their own charms but not as full functionality as one may desire, specifically when it somes to upkeep. So how can you make updates to published vector overlays as seamless as possible?
+Someone got in touch with me recently about using GeoServer to serve custom-made (and _maintainable_) vector overlays to the Arches MAP VIEW, in order to add specific study/research areas to the map. This can be achieved with a graceful integration of some solid open source technologies that Arches is primed to handle. Functionally, wouldn't it be great to edit your vector layers in Quantum GIS, and have the updates immediately visible in your Arches overlays?
 
 Well, here are my thoughts: 
 
-[![what's going on](theme/img/qgis-geoserver-postgis-arches.png)](theme/img/qgis-geoserver-postgis-arches.png)
+[![what's going on](/theme/img/qgis-geoserver-postgis-arches.png)](/theme/img/qgis-geoserver-postgis-arches.png)
 _I'm using :XX where a port must be open to allow the appropriate connections. (It's pretty slick to re-route GeoServer to run through port :80 (instead of :8080) with all your other HTTP requests, but that's a detail beyond our needs here...)_
 
-Or, narratively: Your vector overlays are stored in your PostGIS installation, and can be directly edited there with QGIS (because it has great PostGIS support). These same tables can simultaneously published (and styled) by GeoServer as layers, which in turn can be fed to your custom app, and show up in the map.
+Or, narratively: Store your vector overlays in your existing PostGIS installation, and they can be directly edited there with QGIS (because it has great PostGIS support). These same tables can simultaneously published (and styled) by GeoServer as layers, which in turn can be fed to your custom app, and show up in the map.
 
-Here are the steps I followed to set this up on an example Arches installation. So in my case "Remote Server" is an Amazon EC2 instance (running Ubuntu), "Local Computer" is my laptop with QGIS on it, and "Client (Browser)" is anybody looking at the website. The following steps assume that you have some sort of similar setup (or at least can fill in the blanks where necessary). You must also have a running GeoServer instance on your server.
+Elements of this setup are already built into Arches, as you can read about [here](http://arches-hip.readthedocs.org/en/latest/loading-data/#optional-gis-layers-for-administrative-areas). There is already an "aux" schema within your app's PostGIS database, and with a little configuration you can create polygons whose name will be attributed to any newly created intersecting resource. This is a nice functionality, so you may want to use the following steps to just connect directly to these tables. The steps below will also cover the creation of a new database to hold your overlay tables, outside of the existing app db.
+
+I followed these steps on an example Arches v3 installation. So in my case "Remote Server" is an Amazon EC2 instance (running Ubuntu), "Local Computer" is my laptop with QGIS on it, and "Client (Browser)" is anybody looking at the website. To follow along you must have some sort of similar setup (or at least can fill in the blanks where necessary), and you must have a running GeoServer instance on your server.
 
 ###SSH into your server, and create a new db to hold your tables###
+
+_This is only if you want to create tables that are outside of your app's existing database. If you need to do reinstallations of your app, you may want to do follow this step because your app's database will be dropped and recreated blank on every reinstallation. If you want to make tables in the existing database, just skip to the next section (and substitute the database name accordingly)._
 
 1.  Once logged onto the server, use these commands to make the db:
 
@@ -32,7 +33,7 @@ Here are the steps I followed to set this up on an example Arches installation. 
     
 ###Connect to the db with QGIS to make/edit the tables###
 
-1.  Open QGIS, and begin by creating a connection to the new db<br>_You'll need to make sure you can get to your server through port :5432 for this step, which may mean firewall configuration (this is [super easy](http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/getting-started-create-security-group.html) on AWS)_
+1.  Open QGIS, and begin by creating a connection to the db<br>_You'll need to make sure you can get to your server through port :5432 for this step, which may mean firewall configuration (this is [super easy](http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/getting-started-create-security-group.html) on AWS)_
 
 3.  Open the "Add PostGIS Layer" dialog, click "New", and enter the following:
 
@@ -42,9 +43,12 @@ Here are the steps I followed to set this up on an example Arches installation. 
     Database = arches_overlays<br>
     Username = postgres<br>
     Password = postgis<br>
-    _this is the default username/password combo for new Arches installation_
+    _this is the default username/password combo for a new Arches installation_
     
-4.  Click "Test Connection", and once you get it working click "Ok" and then close the "Add PostGIS Table(s)" dialog.
+4.  Click "Test Connection", and once you get it working click "Ok".
+
+    +  If you are going to use the existing "aux" schema tables in your app database, just find and add these now. You should see "parcels", "overlays", and "addresses". Be sure to refer back to the official Arches [documentation](http://arches-hip.readthedocs.org/en/latest/loading-data/#optional-gis-layers-for-administrative-areas) if you're doing this. When you're done editing in QGIS, just skip to the GeoServer section below.
+    +  Otherwise, close the dialog box, and continue with steps 4-6.
 
 5.  Now, go to _Database > DB Manager > DB Manager_
 
@@ -62,16 +66,16 @@ Here are the steps I followed to set this up on an example Arches installation. 
 
 1.  Log into your GeoServer instance, go to the "Stores" page, and click "Add new data source".
 
-2.  Choose "PostGIS" under Vector Data Sources, and enter the information necessary to connect to your database
+2.  Choose "PostGIS" under Vector Data Sources, and enter the information necessary to connect to your database.
 
     +  Now use `localhost` for the Host, because GeoServer and PostGIS are running on the same server
-    +  Note: be sure to enter the name of your database, `arches_overlays`
+    +  Be sure to enter the name of your PostGIS database
     
 3.  You'll now be able to publish any tables in your database.
 
     +  Most of the information is already ready, but be sure to at least compute the bounding boxes.
     
-4.  Now you can style our layers all you like with the GeoServer's SLD support.
+4.  Now you can style the layers all you like with GeoServer's SLD support.
 
 ###Add your GeoServer layers as overlays in your Arches app###
 

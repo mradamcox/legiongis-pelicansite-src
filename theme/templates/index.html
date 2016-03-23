@@ -14,11 +14,7 @@
 </section>
 
 <hr>
-<div class="recent-news-header">
-    <h3>Latest News</h3>
-</div>
-
-{% for article in dates[:1] %} 
+{% for article in dates[:2] %} 
 <div class="article-summary">
     <div class="date-line">{{ article.locale_date }}, by {{ article.author }}</div>
     <h4>
