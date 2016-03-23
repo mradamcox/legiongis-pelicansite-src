@@ -10,12 +10,14 @@
     
 4.  to upload your changes to the website, first make sure you are in the output directory
 
-5.  then run the s3cmd sync command. make sure to use the following:
+5.  then run the s3cmd sync command. make sure to use one of the following commands:
 
+    +  if you have only added content (not removed any files), you can use
+    
         s3cmd.py sync ./ s3://legiongis.com --acl-public
     
-    _**OR**_
+    +  but if you have removed files in the local repo, and want them to also be removed from the bucket, you must use
     
         s3cmd.py sync ./ s3://legiongis.com --acl-public --delete-removed --exclude "downloads/*" --exclude "safe/*"
 
-    Use the first if you have only added new content to the website, and the second if you have removed any files (such as an image, or a post/post). The `--delete-removed` flag will remove files from the bucket that are not in the local directory, and both of the `--exclude` flags are **crucial**, because we have zip files, html files, pdf slideshows, etc. which sit in the "downloads" and "safe" directories on the bucket (because they do not need to exist within this repo or the "output" directory) and would be deleted from the bucket without the `--exclude` flags.
+        the `--delete-removed` flag will remove files from the bucket that are not in the local directory, but _both_ of the `--exclude` flags are **crucial**, because we have zip files, html files, pdf slideshows, etc. in the bucket (in the "downloads" and "safe" folders) which would be deleted from the bucket without the explicit `--exclude` flags.
