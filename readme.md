@@ -21,3 +21,9 @@
             s3cmd sync ./ s3://legiongis.com --acl-public --delete-removed --exclude "downloads/*" --exclude "safe/*"
 
         the `--delete-removed` flag will remove files from the bucket that are not in the local directory, but _both_ of the `--exclude` flags are **crucial**, because we have zip files, html files, pdf slideshows, etc. in the bucket (in the "downloads" and "safe" folders) which would be deleted from the bucket without the explicit `--exclude` flags.
+        
+6.  when finished with the website, commit all of your changes, and push your local repo to github.
+
+        git add .
+        git commit -m "describe your changes here"
+        git push
