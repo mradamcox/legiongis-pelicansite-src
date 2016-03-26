@@ -27,6 +27,8 @@ SERVICES_PAGES = (
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
+TAG_FEED_ATOM = 'feeds/%s.atom.xml'
+TAG_FEED_RSS = 'feeds/%s.rss.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
@@ -63,6 +65,8 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
+
+DELETE_OUTPUT_DIRECTORY = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
