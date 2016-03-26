@@ -2,7 +2,7 @@ Title: Using QGIS, GeoServer, and PostGIS to Make and Maintain Arches Overlays
 Date: 2016-03-23
 Category: technical
 Author: Adam Cox
-Tags: Arches v3, GeoServer, QGIS, PostGIS
+Tags: Arches, GeoServer, QGIS, PostGIS
 Description: Someone got in touch with me recently about using GeoServer to serve custom-made (and _maintainable_) vector overlays to the Arches MAP VIEW, in order to add specific study/research areas to the map. This can be achieved with a graceful integration of some solid open source technologies that Arches is primed to handle. Functionally, wouldn't it be great to edit your vector layers in Quantum GIS, and have the updates immediately visible in your Arches overlays?
 
 Someone got in touch with me recently about using GeoServer to serve custom-made (and _maintainable_) vector overlays to the Arches MAP VIEW, in order to add specific study/research areas to the map. This can be achieved with a graceful integration of some solid open source technologies that Arches is primed to handle. Functionally, wouldn't it be great to edit your vector layers in Quantum GIS, and have the updates immediately visible in your Arches overlays?
