@@ -149,5 +149,10 @@ pre, ol, ul {
     background:#fff;
     clear:left;
     font:14px "Lato",sans-serif;
-    width: 300px;
+
 }
+
+.mc-field-group {
+    padding-bottom:3px !important;
+}
+
