@@ -156,3 +156,8 @@ pre, ol, ul {
     padding-bottom:3px !important;
 }
 
+#mc_embed_signup .button {
+    font-family: "Lato",sans-serif;
+    font-weight: bold;
+}
+
