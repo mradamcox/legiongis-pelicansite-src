@@ -59,6 +59,13 @@ _Day 3 (Mar. 28): Data Day_
 +  Hands-on activity
     +  Using the NRCS Geospatial Data Gateway
     +  Basic data creation in QGIS
++  _Materials:_
+    + [slides](
+https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/IntroClass_Day3_slides032916.pdf)
+    +  [activity overview](
+https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/Day+3+Activity+%E2%80%94+Finding+and+Importing+Data.pdf)
+    +  Hydrology Datasets: [Vernon County area extract from DNR WD 24k GeoDatabase](
+https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/WD_HYDRO_vcHUC12_clip.zip)
     
 _Day 4 (Apr. 4): Map Day_
 
