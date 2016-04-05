@@ -16,8 +16,9 @@ Documents
 <br>&nbsp;&nbsp;&nbsp;&nbsp;[Glossary of GIS Terms](https://docs.google.com/document/d/1KV-BNb3nFhFHKfTG48yF-vfAi-lwOhRc-Ke_4Ywk1IU/pub) _this is an evolving google doc, so we can improve it throughout the class_
 <br>&nbsp;&nbsp;&nbsp;&nbsp;[Where to Find Geospatial Data](https://docs.google.com/document/d/1MmuemQHztnSK5Xj4DNlbgvtXErR0w_aImZjQWyz3N1Y/pub) _this is an evolving google doc, so we can improve it throughout the class_
 
-Documentation
+Further Learning Resources
 <br>&nbsp;&nbsp;&nbsp;&nbsp;[Official QGIS Documentation](http://docs.qgis.org/2.8/en/docs/user_manual/index.html) _it may be good to start with [this section](http://docs.qgis.org/2.8/en/docs/user_manual/introduction/qgis_gui.html), which describes the inferface_
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Tutorials and Tips, links for videos near the bottom: [www.qgistutorials.com](http://www.qgistutorials.com/en/)
 
 Wild Projections: [https://www.jasondavies.com/maps/transition/](https://www.jasondavies.com/maps/transition/)
 
@@ -74,4 +75,7 @@ _Day 4 (Apr. 4): Map Day_
 +  Hands-on activity
     +  How to use QGIS print compose
     +  Create one or more PDFs with all basic map elements
-
++  _Materials:_
+    +  (no slides for this day)
+    +  [activity overview](	
+https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day4/Day+4+Activity+-+Composing+Maps+for+Print.pdf)
