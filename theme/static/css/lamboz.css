@@ -169,8 +169,8 @@ div.hp-header {
   display:table;
   width:100%;
   /*height:55%;*/
-  height:175px;
-  max-height: 55;
+  height:150px;
+  max-height: 55px;
   position:relative;
   background:url('/theme/img/kvr_background_wide.png') no-repeat center center fixed;
   background-size:cover;
