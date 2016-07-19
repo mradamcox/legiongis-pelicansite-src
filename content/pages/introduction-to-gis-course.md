@@ -48,17 +48,11 @@ _Day 2 (July 12th): Technical Stuff Day_
 +  Coordinate Reference Systems (CRS)
 +  Hands-on activity
     +  How does QGIS handle CRS?
-    +  Creating new shapfiles
-
-
+    +  Creating new shapefiles
 +  _Materials:_
     +  [slides](https://github.com/mradamcox/qgis-intro/blob/master/day2/Day2_slides.pdf?raw=true)
-    
-<!--
-    +  [activity overview](https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day2/Day+2+Activity+%E2%80%94+CRS.pdf)
-    +  The CSV Files: [vc_dams_GCS_NAD83.csv](	
-https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day2/vc_dams_GCS_NAD83.csv) and [vc_dams_PCS_VernonCo_ft.csv](https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day2/vc_dams_PCS_VernonCo_ft.csv)
--->
+    +  [activity preparation](https://github.com/mradamcox/qgis-intro/blob/master/day2/Day 2 Activity - Preparation.pdf?raw=true)
+    +  [activity overview](https://github.com/mradamcox/qgis-intro/blob/master/day2/Day2Activity - ShapefileCreation.pdf?raw=true)
 
 _Day 3 (July 19th): Data Day_
 
@@ -66,17 +60,14 @@ _Day 3 (July 19th): Data Day_
 +  Metadata
 +  Hands-on activity
     +  Using the NRCS Geospatial Data Gateway
-    +  Basic data creation in QGIS
-
-<!--
+    +  Basic data import and styling in QGIS
 +  _Materials:_
     + [slides](
-https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/IntroClass_Day3_slides032916.pdf)
+https://github.com/mradamcox/qgis-intro/blob/master/day3/Day3_slides.pdf?raw=true)
     +  [activity overview](
-https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/Day+3+Activity+%E2%80%94+Finding+and+Importing+Data.pdf)
+https://github.com/mradamcox/qgis-intro/blob/master/day3/Day 3 Activity - Finding and Importing Data.pdf?raw=true)
     +  Hydrology Datasets: [Vernon County area extract from DNR WD 24k GeoDatabase](
-https://s3-us-west-2.amazonaws.com/legiongis.com/safe/gis_intro/day3/WD_HYDRO_vcHUC12_clip.zip)
--->
+https://github.com/mradamcox/qgis-intro/blob/master/day3/WD_HYDRO_vcHUC12_clip.zip?raw=true)
 
 _Day 4 (July 26th): Map Day_
 
