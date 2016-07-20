@@ -20,9 +20,11 @@ Further Learning Resources
 <br>&nbsp;&nbsp;&nbsp;&nbsp;[Official QGIS Documentation](http://docs.qgis.org/2.8/en/docs/user_manual/index.html) _it may be good to start with [this section](http://docs.qgis.org/2.8/en/docs/user_manual/introduction/qgis_gui.html), which describes the inferface_
 <br>&nbsp;&nbsp;&nbsp;&nbsp;Tutorials and Tips, links for videos near the bottom: [www.qgistutorials.com](http://www.qgistutorials.com/en/)
 
-WI County Projection Files: [http://www.wisconsinview.org/research/projection_files/wisconsin_counties/] (http://www.wisconsinview.org/research/projection_files/wisconsin_counties/)
+WI County Projection Files: [http://www.wisconsinview.org/research/projection_files/wisconsin_counties/](http://www.wisconsinview.org/research/projection_files/wisconsin_counties/)
 
 Wild Projections: [https://www.jasondavies.com/maps/transition/](https://www.jasondavies.com/maps/transition/)
+
+Google Maps Terms of Use: [https://www.google.com/intl/ALL/help/terms_maps.html](https://www.google.com/intl/ALL/help/terms_maps.html)
 
 ---
 
