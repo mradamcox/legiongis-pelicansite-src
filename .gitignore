@@ -61,8 +61,5 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-# Pelican output
-output/
-
 # files for download
 theme/static/files/
