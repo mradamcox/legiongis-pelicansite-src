@@ -66,7 +66,5 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = False
 
-DELETE_OUTPUT_DIRECTORY = True
-
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
