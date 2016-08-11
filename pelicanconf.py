@@ -34,6 +34,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+S3URL = "https://s3-us-west-2.amazonaws.com/legiongis.com"
+
 # links of interest
 LINKS = (
     ('Quantum GIS', 'http://qgis.org/'),
@@ -50,13 +52,13 @@ LINKS = (
 
 MAP_GALLERY = (
     
-    ("{}/theme/img/map_gallery/Gunthorp Farm.png".format(SITEURL), 'Food Producer Cluster map for Crossroads Resource Center'),
-    ("{}/theme/img/map_gallery/CRC_ME_elevation.png".format(SITEURL), 'Phyiographic map for Crossroads Resource Center'),
-    ("{}/theme/img/map_gallery/FullCounty_physiographic.png".format(SITEURL), 'Hazard Mitigation map for OCR West'),
-    ("{}/theme/img/map_gallery/SanAugustineDetail.jpg".format(SITEURL), 'Hazard Mitigation map for MPTX'),
-    ("{}/theme/img/map_gallery/viroqua_to_sidieFINAL (Morea) reduce.png".format(SITEURL), 'Virqua/Sidie Hollow area map for Vernon Trails'),
-    ("{}/theme/img/map_gallery/CenturyRideMaps2015_draft3.png".format(SITEURL), 'Century Ride brochure map for Bike Natchitoches'),
-    ("{}/theme/img/map_gallery/Walmsley Graves 11x17.jpg".format(SITEURL), 'American Cemetery map just for fun'),
+    ("{}/img/map_gallery/Gunthorp Farm.png".format(S3URL), 'Food Producer Cluster map for Crossroads Resource Center'),
+    ("{}/img/map_gallery/CRC_ME_elevation.png".format(S3URL), 'Phyiographic map for Crossroads Resource Center'),
+    ("{}/img/map_gallery/FullCounty_physiographic.png".format(S3URL), 'Hazard Mitigation map for OCR West'),
+    ("{}/img/map_gallery/SanAugustineDetail.jpg".format(S3URL), 'Hazard Mitigation map for MPTX'),
+    ("{}/img/map_gallery/viroqua_to_sidieFINAL (Morea) reduce.png".format(S3URL), 'Virqua/Sidie Hollow area map for Vernon Trails'),
+    ("{}/img/map_gallery/CenturyRideMaps2015_draft3.png".format(S3URL), 'Century Ride brochure map for Bike Natchitoches'),
+    ("{}/img/map_gallery/Walmsley Graves 11x17.jpg".format(S3URL), 'American Cemetery map just for fun'),
     )
     
 
@@ -67,4 +69,4 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True

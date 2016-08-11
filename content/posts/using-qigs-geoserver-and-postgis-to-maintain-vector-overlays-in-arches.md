@@ -9,7 +9,8 @@ Someone got in touch with me recently about using GeoServer to serve custom-made
 
 Well, here are my thoughts: 
 
-[![what's going on](/theme/img/qgis-geoserver-postgis-arches.png)](/theme/img/qgis-geoserver-postgis-arches.png)
+[![what's going on](https://s3-us-west-2.amazonaws.com/legiongis.com/img/qgis-geoserver-postgis-arches.png)](	
+https://s3-us-west-2.amazonaws.com/legiongis.com/img/qgis-geoserver-postgis-arches.png)
 _I'm using :XX where a port must be open to allow the appropriate connections. (It's pretty slick to re-route GeoServer to run through port :80 (instead of :8080) with all your other HTTP requests, but that's a detail beyond our needs here...)_
 
 Or, narratively: Store your vector overlays in your existing PostGIS installation, and they can be directly edited there with QGIS (because it has great PostGIS support). These same tables can simultaneously published (and styled) by GeoServer as layers, which in turn can be fed to your custom app, and show up in the map.
@@ -56,7 +57,7 @@ _This is only if you want to create tables that are outside of your app's existi
 
     +  I made a simple polygon table, so my dialog looked like this:
     
-    [![create table dialog](theme/img/make_postgis_table_qgis.png)](theme/img/make_postgis_table_qgis.png)
+    [![create table dialog](https://s3-us-west-2.amazonaws.com/legiongis.com/img/make_postgis_table_qgis.png)](https://s3-us-west-2.amazonaws.com/legiongis.com/img/make_postgis_table_qgis.png)
     
     +  Now that your table exists, you can add it as a PostGIS layer and begin to edit it.
     
