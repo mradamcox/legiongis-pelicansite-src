@@ -27,22 +27,15 @@
     <section class='article'>
         <div class="entry-content">
             {{ article.content }}
+            {% if article.maphtml %}
+                {% include article.maphtml %}
+            {% endif %}
         </div>
     </section>
     <footer class="footer-article">
         <div class="tags-and-categories">Filed: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
         | Tagged: {% if article.tags %}{% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} </a>{% endfor %}{% endif %}
-<!-- 
-        | <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">Permalink</a>            
-        </div>
-        metaldata 
-        {% for m in article.Metaldata %}
-        Rock on! {{ m }}
-        {% endfor %}
-        -->
     </footer>
-    <!-- disqus {{ DISQUS_SITENAME }} -->
     {% include 'article_discus.html' %}
 </div>
 {% endblock %}
