@@ -8,22 +8,16 @@
 
     +  to test changes, enter the output directory, run `python -m SimpleHTTPServer`, and go to "localhost:8000" in a browser
     
-4.  to upload your changes to the website, first make sure you are in the output directory
+4.  to upload your changes to the website, the output directory
 
-5.  then run the s3cmd sync command. make sure to use one of the following commands:
+5.  you are now in a new git repo, so run `git commit` and `git push` as usual.
 
-    +  if you have only added content (not removed any files), you can use
-    
-            s3cmd sync ./ s3://legiongis.com --acl-public
-    
-    +  but if you have removed files in the local repo, and want them to also be removed from the bucket, you must use
-    
-            s3cmd sync ./ s3://legiongis.com --acl-public --delete-removed --exclude "downloads/*" --exclude "safe/*"
-
-        the `--delete-removed` flag will remove files from the bucket that are not in the local directory, but _both_ of the `--exclude` flags are **crucial**, because we have zip files, html files, pdf slideshows, etc. in the bucket (in the "downloads" and "safe" folders) which would be deleted from the bucket without the explicit `--exclude` flags.
+6.  now, `cd ..` to the main repo, and commit and push your changes here as well
         
-6.  when finished with the website, commit all of your changes, and push your local repo to github.
+7.  to publish, log into the website EC2 instance, navigate to /var/www/html (which is a clone of the output repo) and run `git pull`.
 
-        git add .
-        git commit -m "describe your changes here"
-        git push
+###for more extensive updates###
+
+1.  create new branch in local main repo, and local output repo.
+
+2.  switch to these branches, and do all the work there. merge when finished.
