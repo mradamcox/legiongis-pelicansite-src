@@ -7,4 +7,3 @@ Tags: conservation
 We are helping the Crawford Stewardship Project with a few volunteer events, and have set up a page to hold our results and progress. We'll post more later, but in the meantime, you can still track some of our progress and see what we're working on by clicking the link below.
 
 **[CSP Volunteer Efforts](csp/index.html)**
-
