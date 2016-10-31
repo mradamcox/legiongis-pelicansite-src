@@ -12,7 +12,9 @@ SITEURL = 'http://legiongis.com'
 PATH = 'content'
 THEME = 'theme'
 
-DELETE_OUTPUT_DIRECTORY = True
+# keep this false, because output directory has its own git init files
+# which must stay intact!!!
+DELETE_OUTPUT_DIRECTORY = False
 
 # set format like this: March 23, 2016
 DEFAULT_DATE_FORMAT = ('%B %d, %Y')
@@ -24,7 +26,7 @@ PUBLISH_DATE = date.today().strftime("%b %d, %Y")
 
 SUMMARY_MAX_LENGTH = 25
 
-SERVICES = ('arches','services','cartography','education','Introduction to QGIS Course',
+SERVICES = ('arches','services','cartographic services','education','Introduction to QGIS Course',
     'Arches support and hosting',)
 BACKGROUND = ('background')
 BLOG_PAGES = ('blog')
