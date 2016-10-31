@@ -14,34 +14,60 @@
 {% endblock %}
 
 {% block content %}
-    <section class="article">
+<p><a href="{{ SITEURL }}/services.html"><em>&lsaquo; back to services</em></a></p>
+<div class="col-xs-12">
+    <div class="section-header">
+        <span>map gallery</span>
+    </div>
     {% import 'translations.html' as translations with context %}
     {{ translations.translations_for(page) }}
-    {{ page.content }}
-    </section>
-    
-    <hr>
-    
-    <div><h3><em>Some out-of-context past cartographic work from our team</em></h3></div>
-    
-    <div class="row">
-        <div class="hidden-xs">
-            <div class="gallery" align="center">
-                <div class="thumbnails">
-                    {% for src, desc in MAP_GALLERY %}
-                    <img onclick="preview.src=this.src; fullimg.href=this.src; fullimg.title=this.alt" src="{{src}}" alt="{{desc}}" />
-                    {% endfor %}
-                </div>
-                
-                <div class="preview" align="center">
-                    <a href="{{MAP_GALLERY[0][0].src}}" target="_blank" id="fullimg" title="{{MAP_GALLERY[0][1]}}">
-                        <img name="preview" src="{{MAP_GALLERY[0][0]}}" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="hidden-sm hidden-md hidden-lg">
-            <p>This gallery works best on a larger screen, so we recommend that you view it there. Thanks!</p>
-        </div>
+    <p>We create functional and aesthetically pleasing maps on demand, whether for a professional report, an upcoming event, or historic research. Check out the gallery below to see some examples of cartographic products made by Legion GIS staff.</p>
+    <hr class="hr-slight">
+    <p style="padding-bottom:5px;"><em>Click on any map below to open the gallery.</em></p>
+</div>
+<div class="col-xs-12">
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <p class="description"></p>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
     </div>
+    <div id="links">
+        {% for src, thumb, note in MAP_GALLERY %}
+            <a href="{{src}}" data-description="{{note}}">
+                <img src="{{thumb}}" alt="">
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<script src="{{ SITEURL }}/theme/plugins/Gallery-2.21.3/js/blueimp-gallery.min.js"></script>
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event, titleElement: 'h',},
+        options = {
+          index: link, event: event,
+          onslide: function (index, slide) {
+
+            self = this;
+            var initializeAdditional = function (index, data, klass, self) {
+              var text = self.list[index].getAttribute(data),
+                node = self.container.find(klass);
+              node.empty();
+              if (text) {
+                node[0].appendChild(document.createTextNode(text));
+              }
+            };
+            initializeAdditional(index, 'data-description', '.description', self);
+          }
+        },
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
 {% endblock %}

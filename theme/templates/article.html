@@ -1,41 +1,53 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title }} - {{SITENAME}}{% endblock title %}
+{% block title %}
+    {{ article.title }} - {{SITENAME}}
+{% endblock title %}
 {% block pageheader %}
-{% if article.description %}
-    <meta name="description" content="{{ article.description }}" />
-{% else %}
-    <meta name="description" content="{{ article.summary|striptags }}" />
-{% endif %}
-
-<div class="hp-header-inner">
-    <div class="page-header">
-        <div class="content-header">
-            <div id="title-block">
-            <h1>  <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                    title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+    {% if article.description %}
+        <meta name="description" content="{{ article.description }}" />
+    {% else %}
+        <meta name="description" content="{{ article.summary|striptags }}" />
+    {% endif %}
+    <!--
+    <div class="hp-header-inner"  style="height:100px;">
+        <div class="page-header">
+            <div class="content-header">
+                <div id="title-block">
+                    <p class="blurb"><em>{{ article.title }}</em></p>
+                <h1></h1>
+                <h2></h2>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    -->
 {% endblock %}
+
 {% block content %}
-<div class="content-article">
-    <header class="header-article">
-        <div class="read-more">Posted on {{ article.locale_date }}, by {{ article.author }}</div>
- 
-   </header>
-    <section class='article'>
-        <div class="entry-content">
-            {{ article.content }}
-            {% if article.maphtml %}
-                {% include article.maphtml %}
-            {% endif %}
-        </div>
-    </section>
-    <footer class="footer-article">
-        <div class="tags-and-categories">Filed: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-        | Tagged: {% if article.tags %}{% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} </a>{% endfor %}{% endif %}
-    </footer>
-    {% include 'article_discus.html' %}
+<div class="col-xs-12">
+    <div class="content-article">
+        <p><a href="{{ SITEURL }}/blog.html"><em>&lsaquo; back to blog</em></a></p>
+        <h2>{{ article.title }}</h2>
+        <header class="header-article">
+            <h6 class="date-line">Posted on {{ article.locale_date }}, by {{ article.author }}</h6>
+        </header>
+        <section class="article">
+            <div class="entry-content">
+                {{ article.content }}
+                {% if article.maphtml %}
+                    {% include article.maphtml %}
+                    <p><em>{{ article.mapcaption }}</em></p>
+                    <p><em><a href="{{SITEURL}}/{{article.maphtml}}">view standalone map</a></em></p>
+                {% endif %}
+                <!--<p><a href="{{ SITEURL }}/{{article.maphtml}}"><em>view map in full screen</em></a></p>-->
+            </div>
+        </section>
+        <footer class="footer-article">
+            <hr class="hr-slight">
+            <div class="tags-and-categories">Filed: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+            | Tagged: {% if article.tags %}{% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} </a>{% endfor %}{% endif %}
+        </footer>
+        {% include 'article_discus.html' %}
+    </div>
 </div>
 {% endblock %}

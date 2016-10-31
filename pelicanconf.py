@@ -4,10 +4,18 @@ from __future__ import unicode_literals
 from datetime import date
 
 AUTHOR = u'LegionGIS'
-SITENAME = u'Legion GIS'
-SITEURL = ''
+SITENAME = u'Legion GIS, LLC'
+SITESUBTITLE = 'geospatial consulting and research'
+
+SITEURL = 'http://legiongis.com'
 
 PATH = 'content'
+THEME = 'theme'
+
+DELETE_OUTPUT_DIRECTORY = True
+
+# set format like this: March 23, 2016
+DEFAULT_DATE_FORMAT = ('%B %d, %Y')
 
 TIMEZONE = 'America/Chicago'
 
@@ -16,13 +24,38 @@ PUBLISH_DATE = date.today().strftime("%b %d, %Y")
 
 SUMMARY_MAX_LENGTH = 25
 
-THEME = "theme"
+SERVICES = ('arches','services','cartography','education','Introduction to QGIS Course',
+    'Arches support and hosting',)
+BACKGROUND = ('background')
+BLOG_PAGES = ('blog')
 
-SERVICES_PAGES = (
-    ('Arches', "{}/pages/services/arches.html".format(SITEURL)),
-    ('Cartography', "{}/pages/services/cartography.html".format(SITEURL)),
-    ('Education', "{}/pages/services/education.html".format(SITEURL)),
-    )
+STATIC_PATHS = [
+    #'extra/robots.txt', 
+    'extra/favicon.ico',
+    'csp',
+    #'maps',
+]
+
+READERS = {'html': None}
+
+EXTRA_PATH_METADATA = {
+    #'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+}
+
+QUICK_LINKS = (
+    ('Arches Services', "arches-services.html"),
+    ('Cartographic Work Examples', "cartographic-services.html"),
+    ('Crawford Stewardship Project', "csp-volunteer-efforts.html"),
+    ('Introduction to GIS Course', "introduction-to-gis-course.html"),
+    ('Blog Posts With Web Maps', "tag/web-maps.html"),
+)
+
+# the thought is that the map templates that aree included in some blog posts
+# can also be written directly to the output 
+DIRECT_TEMPLATES = [
+    r'maps/afrh-historicmaps',
+]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -48,23 +81,40 @@ LINKS = (
     ('Amazon Web Services', 'https://aws.amazon.com/'),
     ('Pelican', 'http://getpelican.com/'),
     ('TileMill', 'https://www.mapbox.com/tilemill/'),
-    )
+)
 
+# create client list (url,logo)
+CLIENTS = (
+    ('http://valleystewardshipnetwork.org/',S3URL+'/img/client-logos/gci.png'),
+    ('http://home.preservescapes.com/', S3URL+'/img/client-logos/preservescapes.png'),
+    ('http://www.crawfordstewardshipproject.org/',S3URL+'/img/client-logos/csp.png'),
+    ('http://www.crcworks.org/',S3URL+'/img/client-logos/crc.png'),
+    ('http://valleystewardshipnetwork.org/',S3URL+'/img/client-logos/vsn-black.png'),
+    ('http://www.windingroadsart.com/',S3URL+'/img/client-logos/wrat.png'),
+    ('http://www.vernoncountyhistory.org/',S3URL+'/img/client-logos/vchs.png'),
+    ('http://www.melroseplantation.org/',S3URL+'/img/client-logos/melrose.png'),
+    ('http://www.canerivernha.org/',S3URL+'/img/client-logos/crnha_logo.png'),
+    
+)
+
+# create the list for map gallery: (fullsize,thumb,description)
+MAP_GALLERY_URL = S3URL+"/img/map_gallery"
 MAP_GALLERY = (
-    
-    ("{}/img/map_gallery/Gunthorp Farm.png".format(S3URL), 'Food Producer Cluster map for Crossroads Resource Center'),
-    ("{}/img/map_gallery/CRC_ME_elevation.png".format(S3URL), 'Phyiographic map for Crossroads Resource Center'),
-    ("{}/img/map_gallery/FullCounty_physiographic.png".format(S3URL), 'Hazard Mitigation map for OCR West'),
-    ("{}/img/map_gallery/SanAugustineDetail.jpg".format(S3URL), 'Hazard Mitigation map for MPTX'),
-    ("{}/img/map_gallery/viroqua_to_sidieFINAL (Morea) reduce.png".format(S3URL), 'Virqua/Sidie Hollow area map for Vernon Trails'),
-    ("{}/img/map_gallery/CenturyRideMaps2015_draft3.png".format(S3URL), 'Century Ride brochure map for Bike Natchitoches'),
-    ("{}/img/map_gallery/Walmsley Graves 11x17.jpg".format(S3URL), 'American Cemetery map just for fun'),
-    )
-    
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+    (MAP_GALLERY_URL+"/Gunthorp+Farm.png",MAP_GALLERY_URL+"/thumbs/Gunthorp%2BFarm_thumb.png",
+        'food producer cluster map, for Crossroads Resource Center'),
+    (MAP_GALLERY_URL+"/CRC_ME_elevation.png",MAP_GALLERY_URL+"/thumbs/CRC_ME_elevation_thumb.png",
+        'physiographic map showing counties in Maine, for Crossroads Resource Center'),
+    (MAP_GALLERY_URL+"/FullCounty_physiographic.png",MAP_GALLERY_URL+"/thumbs/FullCounty_physiographic_thumb.png",
+        'Lane County Oregon, for OCR West hazard mitigation planning document'),
+    (MAP_GALLERY_URL+"/SanAugustineDetail.jpg",MAP_GALLERY_URL+"/thumbs/SanAugustineDetail_thumb.jpg",
+        'City of San Augustine for MPTX hazard mitigation planning document'),
+    (MAP_GALLERY_URL+"/viroqua_to_sidieFINAL (Morea) reduce.png",MAP_GALLERY_URL+"/thumbs/viroqua_to_sidieFINAL%2B(Morea)%2Breduce_thumb.png",
+        'bike map of Sidie Hollow/Viroqua, WI area, for Vernon Trails'),
+    (MAP_GALLERY_URL+"/CenturyRideMaps2015_draft3.png",MAP_GALLERY_URL+"/thumbs/CenturyRideMaps2015_draft3_thumb.png",
+        '2nd Annual Century Ride brochure map, for Bike Natchitoches'),
+    (MAP_GALLERY_URL+"/Walmsley+Graves+11x17.jpg",MAP_GALLERY_URL+"/thumbs/Walmsley%2BGraves%2B11x17_thumb.jpg",
+        'American Cemetery, automated product of gravefinder ArcGIS toolbox'),
+)
 
 DEFAULT_PAGINATION = False
 

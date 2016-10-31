@@ -14,42 +14,77 @@
 {% endblock %}
 
 {% block content %}
-    <section class="article">
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
-    {{ page.content }}
-    </section>
-    <hr>
-    <div><h3><em>Past Arches work from our team</em></h3></div>
-    
-    <div class="row arches-project-row">
-        <div class="col-sm-3">
+<p><a href="{{ SITEURL }}/services.html"><em>&lsaquo; back to services</em></a></p>
+<div class="col-xs-12">
+    <div class="section-header">
+        <span>background</span>
+    </div>
+    <p>Arches (<a href="http://www.archesproject.org">www.archesproject.org</a>) is a robust web-based inventory platform designed specifically for cultural heritage resources. Sponsored by the Getty Conservation Institute and World Monuments Fund, Arches is open source software developed by Farallon Geographics. Legion GIS has been fortunate to work closely with all of these organizations to help with support on the <a href="https://groups.google.com/forum/#!forum/archesproject">Arches user forum</a>, co-present at conferences in the US and abroad, and participate in further development of the software. Through all of these activities we've gained extensive experience with the platform, and will be a great resource to facilitate your organization's interest in Arches.</p>
+    <div class="section-header">
+        <span>demos</span>
+    </div>
+    <p><em>Want to try Arches out? Go to any of the Legion-hosted demo sites below, and sign in with username = guest and password = guest. These three apps are examples of what Legion GIS is prepared to create or customize for your organization.</em></p>
+    <div class="col-xs-12">
+        <div class="col-sm-3 hidden-xs">
             <div class="arches-project-image">
-                <a href="http://afrh.legiongis.com">
+                <a href="http://arches3.legiongis.com/afrh">
                     <img src="{{S3URL}}/img/afrh_home.png"/>
                 </a>
             </div>
         </div>
-        <div class="col-sm-9">
-            <h5>Armed Forces Retirement Home - Washington</h5>
-            <p><a href="http://afrh.legiongis.com">see it!</a> | <a href="http://afrh.legiongis.com">demo</a> | <a href="https://github.com/mradamcox/afrh">repo</a></p>
-            <p>In close collaboration with <a href="http://home.preservescapes.com/">PRESERVE/scapes</a>, a Washington, DC-based cultural resource preservation firm, Adam worked to migrate the existing AFRH asset database (which used to reside an MS Access) to a custom Arches deployment. Significant customizations were made to the Arches platform, among them the addition of 12 historic map layers, the modification and creation of the database schema to better reflect the AFRH-W assets, significant restructuring of the user-interface, and permission-based report viewing, so not just anyone can view all of the information!</p>
-            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;project in progess, release expected by the end of Summer, 2016</em></p>
+        <div class="col-xs-12 col-sm-9">
+            <h5><a href="http://arches3.legiongis.com/afrh">AFRH-IRIS app</a></h5>
+            <p>We worked together with PRESERVE/scapes to create this Arches v3 app for the Armed Forces Retirement Home in Washington DC. We incorporated many historic maps (read about that <a href="{{SITERUL}}/using-historic-maps-of-the-armed-forces-retirement-home.html">here</a>), created a multi-faceted permissions system, and reworked the database system to assist with site management and development project planning. <em><a href="https://github.com/mradamcox/afrh">visit the repo</a></em></p>
         </div>
     </div>
-    <div class="row arches-project-row">
-        <div class="col-sm-3">
+    <div class="col-xs-12">
+        <div class="col-sm-3 hidden-xs">
             <div class="arches-project-image">
-                <a href="http://crhim.canerivernha.org">
+                <a href="http://arches3.legiongis.com/crhim">
                     <img src="{{S3URL}}/img/crhim_home.png"/>
                 </a>
             </div>
         </div>
-        <div class="col-sm-9">
-            <h5>Cane River National Heritage Area, Inc.</h5>
-            <p><a href="http://crhim.canerivernha.org">see it!</a> | <a href="http://arches.adamcfcox.com/crip_demo">demo</a> | <a href="https://github.com/mradamcox/crip">repo</a></p>
-            <p>In spring of 2015, Adam worked with the Cane River NHA, located in Natchitoches, Louisiana to create the Cane River Heritage Inventory & Map, which was one of the first independent deployments of then-brand-new Arches v3. The project included the migration of spatial data (a few shapefiles and ESRI geodatabases), tabular data (spreadsheets of cemetery burials), and audio files (CDs containing interviews) into a single Arches database. Now all of this information lives together. In addition to data migration, many historic maps were processed and added as overlays to give the database map a novel and exciting historical dimension.</p>
-            <p><em>&nbsp;&nbsp;&nbsp;&nbsp;official release set for Spring 2016</em></p>
+        <div class="col-xs-12 col-sm-9">
+            <h5><a href="http://arches3.legiongis.com/crhim">Cane River Historic Inventory &amp; Map</a></h5>
+            <p>Our first work with Arches was to create this app for the Cane River National Heritage Area, in Natchitoches Parish, Louisiana. We created many new map layers (from Sanborn Maps&copy; to high resolution elevation reliefs) to enhance the map view, and migrated many existing datasets to the new installation, including an entire historic cemetery. <em><a href="https://github.com/mradamcox/crip">visit the repo</a></em></p>
         </div>
     </div>
+    <div class="col-xs-12">
+        <div class="col-sm-3 hidden-xs">
+            <div class="arches-project-image">
+                <a href="http://arches3.legiongis.com/crhim">
+                    <img src="{{S3URL}}/img/hip-home.png"/>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <h5><a href="http://arches3.legiongis.com/crhim">Arches-HIP</a></h5>
+            <p>This is a demo version of the Arches Heritage Inventory Package, the default Arches v3 app. Arches-HIP was developed by Farallon Geographics in conjunction with the creation of <a href="http://www.historicplacesla.com">HistoricPlacesLA</a> the first large-scale Arches v3 implementation. <em><a href="https://github.com/archesproject/hip">visit the repo</a></em></p>
+        </div>
+    </div>
+    <div class="col-xs-12 col-flush">
+        <div class="section-header">
+            <span>hosting</span>
+        </div>
+        <p>Even though Arches is open source software (free to use), it still needs to be hosted on a server somewhere, so it is accessible through the internet. Along with data migration, component customization, and final installation, we can take care of hosting for you as well. We use Amazon Web Services for all of our web hosting. This is a reliable and cost effective service that lends itself perfectly to the architecture of the Arches platform. Please get in touch with us to discuss prices for all of our Arches-related services.</p>
+    </div>
+    <div class="col-xs-12 col-flush">
+        <div class="section-header">
+            <span>v3 utilities</span>
+        </div>
+        <p>During Arches v3 development, our staff has created some shortcuts here and there that we are happy to share. Feel free to download or contribute.</p>
+        <ul>
+            <li><a href="https://github.com/mradamcox/arc2arches">arc2arches</a> ArcGIS toolbox is designed to convert shapefiles or file geodatabase feature classes into the native Arches upload format.</li>
+            <li><a href="https://github.com/mradamcox/arc2arches">arches3_utils</a> is a little set of python scripts to aid in the creation of auxiliary resource-graph related files (authority documents, etc.).</li>
+        </ul>
+    </div>
+    <!--
+    We have been fortunate to become very familiar with Arches, ! Very easy to view, search, and update. To learn more about Arches, visit the official project [website](http://www.archesproject.org), and acquaint yourself with some of the concepts that make the platform unique.
+
+Legion GIS is well-positioned to offer high quality Arches development. Through work with the Getty Conservation Institute, one of the main sponsors of the Arches development, we have already been able to offer a significant amount of support to the growing world-wide Arches community. This has given us the opportunity to be exposed to (and become familiar with) the needs of a wide variety of cultural heritage professionals and organizations. We look forward to sharing this experience with you, and learning more in the meantime!
+
+If you're a curious programmer, you'll be happy to learn that we do all of our Arches package development in public GitHub repositories (see links below). You may also be interested in the Arches [forum](https://groups.google.com/forum/#!forum/archesproject), or the project [repo](https://github.com/archesproject/arches) itself.</p>
+    </section>-->
+</div>
 {% endblock %}

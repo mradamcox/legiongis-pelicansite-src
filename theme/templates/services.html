@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{%endblock%}
+{% block title %}sevices - Legion GIS{%endblock%}
 
 {% block pageheader %}
 <div class="hp-header-inner">
     <div class="page-header">
         <div class="content-header">
             <div id="title-block">
-            <h1>{{ page.title }}</h1>
+            <h1>services</h1>
             </div>
         </div>
     </div>
@@ -14,49 +14,25 @@
 {% endblock %}
 
 {% block content %}
-{% import 'translations.html' as translations with context %}
-{{ translations.translations_for(page) }}
-
-<div class="row hidden-xs">
-    <div class="col-sm-4">
-        <div class="service-summary">
-            <h3><a href="{{ SITE_URL }}/pages/services/cartography.html">Cartography</a></h3>
-            <p>We have extensive experience creating professional cartographic products for reports, brochures, and everyday fun.</p>
-        </div>
+<div class="col-xs-12 col-sm-8" style="margin-bottom:20px;">
+    <div class="section-header">
+        <span>cartography</span>
     </div>
-    <div class="col-sm-4">
-        <div class="service-summary">
-            <h3><a href="{{ SITE_URL }}/pages/services/arches.html">Arches</a></h3>
-            <p>Our main web-based spatial database work has been with Arches, an inventory platform designed specifically for cultural resource management.</p>
-        </div>
+    <p>We have extensive experience creating professional cartographic products for reports, brochures, and anything in between. View samples of our cartographic work <a href="{{SITEURL}}/cartographic-services.html">here</a>.</p>
+    <div class="section-header">
+        <span>GIS development</span>
     </div>
-    <div class="col-sm-4">
-        <div class="service-summary">
-            <h3><a href="{{ SITE_URL }}/pages/services/education.html">Education</a></h3>
-            <p>We like to share our knowledge, and are looking forward to being able to teach some classes and perhaps offer curricula in the future.</p>
-        </div>
+    <p>Perhaps you need to publish new survey results on a web map, or create a spatial database of plots in a cemetery. Maybe your organization could benefit from some custom tools to incorporate into your ArcGIS workflow. We have experience with all of these things, and would be happy to help you out.</p>
+    <div class="section-header">
+        <span>Arches support and hosting</span>
     </div>
+    <p>As one of the main companies offering comprehensive development and support for the Arches inventory platform, we are happy to work with your organization during the deployment process, or even take care of hosting the entire system for you. Visit the <a href="{{SITEURL}}/arches-services.html">Arches services page</a> for more information.</p>
+    <div class="section-header">
+        <span>education</span>
+    </div>
+    <p>We can help your organization with training in the use of GIS mapping software (QGIS or ArcGIS), or we can facilitate <a href="{{SITEURL}}/introduction-to-gis-course.html">a basic introduction course</a>. We also love sharing knowledge, so to learn more about anything on our site you need only get in touch.</p>
 </div>
-<div class="row hidden-sm hidden-md hidden-lg">
-    <div class="col-xs-12">
-        <div class="service-summary">
-            <h3><a href="{{SITE_URL}}/pages/services/cartography.html">Cartography</a></h3>
-            <p>We have extensive experience creating professional cartographic products for reports, brochures, and everyday fun.</p>
-            <hr>
-            <h3><a href="{{SITE_URL}}/pages/services/arches.html">Arches</a></h3>
-            <p>Our main web-based spatial database work has been with Arches, an inventory platform designed specifically for cultural resource management.</p>
-            <hr>
-            <h3><a href="{{SITE_URL}}/pages/services/education.html">Education</a></h3>
-            <p>We like to share our knowledge, and are looking forward to being able to teach some classes and perhaps offer curricula in the future.</p>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <br>
-        <section class="article">
-            {{ page.content }}
-        </section>
-    </div>
+<div class="col-xs-12 col-sm-4">
+    {% include 'quick-links.html' %}
 </div>
 {% endblock %}

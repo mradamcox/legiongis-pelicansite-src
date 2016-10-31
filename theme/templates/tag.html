@@ -4,7 +4,7 @@
     <div class="page-header">
         <div class="content-header">
             <div id="title-block">
-                <h1>Articles tagged with {{ tag }} </h1>
+                <h1>articles tagged with '{{ tag }}'</h1>
             </div>
         </div>
     </div>
@@ -17,23 +17,19 @@
 {% block content_title %}
 {% endblock %}
 
-
 {% set cnt = 0 %}
-
-
-<blocks cols="2">
+<div style="margin-bottom:20px;">
+    <p><a href="{{ SITEURL }}/blog.html"><em>&lsaquo; back to blog</em></a></p>
+</div>
 {% for article in articles_page.object_list %}
         <div class="sec-article">
             <div class="read-more">{{ article.locale_date}}</div>
-
-            <h3><a href="{{ SITEURL }}/{{ article.url }}" rel=Bookmark title="Permalink to {{ article.title | striptags }}">{{ article.title }}</a></h3>
+            <h3><a href="{{ SITEURL }}/{{ article.url }}" rel=Bookmark>{{ article.title }}</a></h3>
             <p>
-            {{ article.summary }}            
+            {{ article.summary[:-8] | striptags }}... <a href="{{ SITEURL }}/{{ article.url }}" rel=Bookmark title="{{ article.title | striptags }}"><em>read more</em></a>           
             </p>
         </div>
-
 {% endfor %}
-</blocks>
 {% if articles_page.has_other_pages() %}
 <div class="pagination-block">
     {% include 'pagination.html' %}

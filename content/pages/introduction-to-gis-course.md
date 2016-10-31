@@ -1,11 +1,19 @@
-Title: Introduction to GIS
-status: hidden
+Title: Introduction to QGIS Course
+save_as: introduction-to-gis-course.html
 
-The course will run 7pm to 9pm on Tuesdays, at Conservation Connections, 110 South Main St. You will need a laptop, and bringing a mouse is recommended though not required. We'll be using [Quantum GIS](https://www.qgis.org/en/site/), which is some of the best free and open source GIS software available. During the first session we'll be installing the software together, but it will be very helpful if you can download the correct installer ahead of time because it's about 375mb and we don't want to stress out our available bandwidth with a bunch of simulatenous downloads. See link below.
+_Through a partnership with the Valley Stewardship Network, in Viroqua, WI, we had the opportunity to develop and teach the following introduction to GIS course. We did so in March and July of 2016. The course materials are hosted in a [GitHub repo](https://github.com/mradamcox/qgis-intro), so anyone can use or contribute to them._
 
----
 
-**RESOURCES**
+<div class="section-header">
+    <span>COURSE INTRO</span>
+</div>
+
+The course consists of four two-hour, weekly sessions. You will need a laptop, and bringing a mouse is recommended though not required. We'll be using [Quantum GIS](https://www.qgis.org/en/site/), which is some of the best free and open source GIS software available. During the first session we'll be installing the software together, but it will be very helpful if you can download the correct installer ahead of time because it's about 375mb and we don't want to stress out our available bandwidth with a bunch of simulatenous downloads. See link in resources below.
+
+<div class="section-header">
+    <span>RESOURCES</span>
+</div>
+
 
 QGIS download page: [https://www.qgis.org/en/site/forusers/download.html#](https://www.qgis.org/en/site/forusers/download.html#)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;please get the latest release, **Version 2.14**, and be sure to download the correct installer for your operating system
@@ -26,11 +34,11 @@ Wild Projections: [https://www.jasondavies.com/maps/transition/](https://www.jas
 
 Google Maps Terms of Use: [https://www.google.com/intl/ALL/help/terms_maps.html](https://www.google.com/intl/ALL/help/terms_maps.html)
 
----
+<div class="section-header">
+    <span>COURSE OUTLINE</span>
+</div>
 
-**COURSE OUTLINE**
-
-_Day 1 (July 5th): Software Day_
+_Day 1: Software Day_
 
 +  General GIS overview
 +  General GIS software overview
@@ -44,7 +52,7 @@ https://github.com/mradamcox/qgis-intro/blob/master/day1/Day1_slides.pdf?raw=tru
     +  [QGIS Navigation Cheat Sheet](https://github.com/mradamcox/qgis-intro/blob/master/day1/GISNavigationCheatSheet.pdf?raw=true)
 
 
-_Day 2 (July 12th): Technical Stuff Day_
+_Day 2: Technical Stuff Day_
 
 +  Data formats
 +  Coordinate Reference Systems (CRS)
@@ -56,7 +64,7 @@ _Day 2 (July 12th): Technical Stuff Day_
     +  [activity preparation](https://github.com/mradamcox/qgis-intro/blob/master/day2/Day 2 Activity - Preparation.pdf?raw=true)
     +  [activity overview](https://github.com/mradamcox/qgis-intro/blob/master/day2/Day2Activity - ShapefileCreation.pdf?raw=true)
 
-_Day 3 (July 19th): Data Day_
+_Day 3: Data Day_
 
 +  Who, what, and where of GIS data collection
 +  Metadata
@@ -71,7 +79,7 @@ https://github.com/mradamcox/qgis-intro/blob/master/day3/Day 3 Activity - Findin
     +  Hydrology Datasets: [Vernon County area extract from DNR WD 24k GeoDatabase](
 https://github.com/mradamcox/qgis-intro/blob/master/day3/WD_HYDRO_vcHUC12_clip.zip?raw=true)
 
-_Day 4 (July 26th): Map Day_
+_Day 4: Map Day_
 
 +  General QGIS print compose overview
 +  Basic elements of a map
