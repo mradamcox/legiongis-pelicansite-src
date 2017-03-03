@@ -36,6 +36,7 @@ STATIC_PATHS = [
     'extra/favicon.ico',
     'csp',
     #'maps',
+    's',
 ]
 
 READERS = {'html': None}
@@ -53,7 +54,7 @@ QUICK_LINKS = (
     ('Blog Posts With Web Maps', "tag/web-maps.html"),
 )
 
-# the thought is that the map templates that aree included in some blog posts
+# the thought is that the map templates that are included in some blog posts
 # can also be written directly to the output 
 DIRECT_TEMPLATES = [
     r'maps/afrh-historicmaps',
