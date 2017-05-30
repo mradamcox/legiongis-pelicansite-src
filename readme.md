@@ -8,7 +8,7 @@
 
     +  to test changes, enter the output directory, run `python -m SimpleHTTPServer`, and go to "localhost:8000" in a browser
     
-4.  to upload your changes to the website, the output directory
+4.  to upload your changes to the website, enter the output directory
 
 5.  you are now in a new git repo, so run `git commit` and `git push` as usual.
 
