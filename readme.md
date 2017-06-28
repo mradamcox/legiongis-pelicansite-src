@@ -1,4 +1,4 @@
-###general website updating procedure###
+### general website update procedure
 
 1.  update local repo
 
@@ -8,7 +8,7 @@
 
     +  to test changes, enter the output directory, run `python -m SimpleHTTPServer`, and go to "localhost:8000" in a browser
     
-4.  to upload your changes to the website, the output directory
+4.  to upload your changes to the website, enter the output directory
 
 5.  you are now in a new git repo, so run `git commit` and `git push` as usual.
 
@@ -16,8 +16,8 @@
         
 7.  to publish, log into the website EC2 instance, navigate to /var/www/html (which is a clone of the output repo) and run `git pull`.
 
-###for more extensive updates###
+#### for more extensive updates
 
-1.  create new branch in local main repo, and local output repo.
+1.  create new branch in local main repo, and also in local output repo.
 
 2.  switch to these branches, and do all the work there. merge when finished.
