@@ -4,4 +4,4 @@ Category: Services
 save_as: cartographic-services.html
 template: cartography
 
-this text will not be used anywhere
+This text will not be displayed anywhere. All content comes directly from the template.

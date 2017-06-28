@@ -4,4 +4,4 @@ Category: blog
 template: blog
 save_as: blog.html
 
-this text will not be displayed anywhere.
+This text will not be displayed anywhere. All content comes directly from the template.

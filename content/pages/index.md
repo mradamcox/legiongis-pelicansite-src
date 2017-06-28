@@ -4,4 +4,4 @@ Category: index
 template: index
 save_as: index.html
 
-this text will not be displayed anywhere.
+This text will not be displayed anywhere. All content comes directly from the template.

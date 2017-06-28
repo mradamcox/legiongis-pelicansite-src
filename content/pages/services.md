@@ -4,4 +4,4 @@ Category: services
 template: services
 save_as: services.html
 
-this text is not shown anywhere.
+This text will not be displayed anywhere. All content comes directly from the template.
