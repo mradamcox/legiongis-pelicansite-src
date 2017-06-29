@@ -70,8 +70,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-S3URL = "https://s3-us-west-2.amazonaws.com/legiongis.com"
-
 # links of interest
 LINKS = (
     ('Quantum GIS', 'http://qgis.org/'),
@@ -88,19 +86,20 @@ LINKS = (
 
 # create client list (url,logo)
 CLIENTS = (
-    ('http://valleystewardshipnetwork.org/',S3URL+'/img/client-logos/gci.png'),
-    ('http://home.preservescapes.com/', S3URL+'/img/client-logos/preservescapes.png'),
-    ('http://www.crawfordstewardshipproject.org/',S3URL+'/img/client-logos/csp.png'),
-    ('http://www.crcworks.org/',S3URL+'/img/client-logos/crc.png'),
-    ('http://valleystewardshipnetwork.org/',S3URL+'/img/client-logos/vsn-black.png'),
-    ('http://www.windingroadsart.com/',S3URL+'/img/client-logos/wrat.png'),
-    ('http://www.vernoncountyhistory.org/',S3URL+'/img/client-logos/vchs.png'),
-    ('http://www.melroseplantation.org/',S3URL+'/img/client-logos/melrose.png'),
-    ('http://www.canerivernha.org/',S3URL+'/img/client-logos/crnha_logo.png'),
+    ('http://valleystewardshipnetwork.org/','theme/img/client-logos/gci.png'),
+    ('http://home.preservescapes.com/', 'theme/img/client-logos/preservescapes.png'),
+    ('http://www.crawfordstewardshipproject.org/','theme/img/client-logos/csp.png'),
+    ('http://www.crcworks.org/','theme/img/client-logos/crc.png'),
+    ('http://valleystewardshipnetwork.org/','theme/img/client-logos/vsn-black.png'),
+    ('http://www.windingroadsart.com/','theme/img/client-logos/wrat.png'),
+    ('http://www.vernoncountyhistory.org/','theme/img/client-logos/vchs.png'),
+    ('http://www.melroseplantation.org/','theme/img/client-logos/melrose.png'),
+    ('http://www.canerivernha.org/','theme/img/client-logos/crnha_logo.png'),
     
 )
 
 # create the list for map gallery: (fullsize,thumb,description)
+S3URL = "https://s3-us-west-2.amazonaws.com/legiongis.com"
 MAP_GALLERY_URL = S3URL+"/img/map_gallery"
 MAP_GALLERY = (
     (MAP_GALLERY_URL+"/Gunthorp+Farm.png",MAP_GALLERY_URL+"/thumbs/Gunthorp%2BFarm_thumb.png",
