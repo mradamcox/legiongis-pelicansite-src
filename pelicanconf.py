@@ -95,6 +95,8 @@ CLIENTS = (
     ('http://www.vernoncountyhistory.org/','theme/img/client-logos/vchs.png'),
     ('http://www.melroseplantation.org/','theme/img/client-logos/melrose.png'),
     ('http://www.canerivernha.org/','theme/img/client-logos/crnha_logo.png'),
+    ('http://www.flpublicarchaeology.org','theme/img/client-logos/FPAN_logo.png'),
+    ('http://www.thebanmappingproject.com/','theme/img/client-logos/tmp_nav_logo_off.gif'),
     
 )
 
