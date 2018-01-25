@@ -25,9 +25,11 @@
         <span>get in touch</span>
     </div>
     <p>Questions about what we can do for you? Feel free to call or send us a message. Also, if you are interested in working on the types of projects you see here, don't hesitate to send us your résumé. Get in touch at <a id="contact-email"></a>, or give us a call: 608-606-9928.</p>
+    <!--
     <div class="section-header">
         <span>recent news</span>
     </div>
+    
     {% for article in dates[:2] %}
     <div class="article-summary">
         <h5 class="article-summary-title">
@@ -37,6 +39,7 @@
         <p class="article-summary-text" style="padding-left:15px">{{ article.summary[:-8] | striptags }}... <a href="{{ SITEURL }}/{{ article.url }}" rel=Bookmark title="{{ article.title | striptags }}"><em>read more</em></a></p>
     </div>
     {% endfor %}
+    -->
 </div>
 <div class="hidden-xs col-sm-4">
     {% include 'side-bar.html' %}
