@@ -86,7 +86,7 @@ LINKS = (
 
 # create client list (url,logo)
 CLIENTS = (
-    ('http://valleystewardshipnetwork.org/','theme/img/client-logos/gci.png'),
+    ('http://www.getty.edu/conservation/','theme/img/client-logos/gci.png'),
     ('http://home.preservescapes.com/', 'theme/img/client-logos/preservescapes.png'),
     ('http://www.crawfordstewardshipproject.org/','theme/img/client-logos/csp.png'),
     ('http://www.crcworks.org/','theme/img/client-logos/crc.png'),
